@@ -43,7 +43,7 @@ locality_options = [
     'Veurne', 'Virton', 'Waremme'
 ]
 property_type = st.selectbox("Property Type", ["House", "Apartment"])
-locality = st.selectbox("Locality", locality_options, index=0)
+locality = st.selectbox("Locality", locality_options, value="Gent")
 zip_code = st.number_input("Zip Code", value=9000, step=1)
 construction_year = st.number_input("Construction Year", min_value=1800, max_value=2024, value=2020)
 total_area_sqm = st.number_input("Total Area (sqm)", value=100.0, step=1.0)
