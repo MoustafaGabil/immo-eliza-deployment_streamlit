@@ -36,24 +36,16 @@ def get_lat_lon(zip_code: int, locality: str):
 # Function to validate integer inputs
 def validate_int(value, field_name):
     if not isinstance(value, int):
-        raise HTTPException(
-            status_code=400,
-            detail="Invalid input, Please enter an integer values for Bedrooms and Frontages.",
-        )
+        raise ValueError("Invalid input, Please enter an integer values for Bedrooms and Frontages.",)
     if value <= 0:
-        raise HTTPException(
-            status_code=400,
-            detail="Invalid input, Please enter an integer values for Bedrooms and Frontages.",
-        )
+        raise ValueError("Invalid input, Please enter an integer values for Bedrooms and Frontages.",)
     
 # Function to validate logical relationships between areas
 def validate_area_relationships(surface_land_sqm, total_area_sqm, garden_sqm):
     if garden_sqm > surface_land_sqm or garden_sqm > total_area_sqm:
         raise ValueError("Garden size cannot be larger than the surface land area or total area.")
     if total_area_sqm > surface_land_sqm:
-        raise HTTPException(
-            status_code=400,
-            detail="Invalid input: Total area cannot be larger than the surface land.",) 
+        raise ValueError("Invalid input: Total area cannot be larger than the surface land.",) 
 ################################################ which way should we write the error? #####################################
 
 
