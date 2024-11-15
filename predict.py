@@ -38,12 +38,12 @@ def validate_int(value, field_name):
     if not isinstance(value, int):
         raise HTTPException(
             status_code=400,
-            detail=f"Invalid input for {field_name}. Please enter an integer value.",
+            detail=f"Invalid input, Please enter an integer values for Bedrooms and Frontages.",
         )
     if value <= 0:
         raise HTTPException(
             status_code=400,
-            detail=f"Invalid input for {field_name}. Value must be a positive integer.",
+            detail=f"Invalid input, Please enter an integer values for Bedrooms and Frontages.",
         )
     
 # Function to validate logical relationships between areas
